@@ -1,0 +1,646 @@
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Oswald&family=Rubik+Doodle+Shadow&display=swap');
+
+#preloader { 
+    position: fixed; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgb(255, 255, 255);
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    z-index: 9999;  
+}
+
+.preloader-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	margin-top: -70px;
+}
+
+#preloader img {
+	margin: -50px;
+}
+
+.MV {
+    width: 260px;
+}
+
+#preloader .Mv {
+    width: 150px;
+	margin-top: 50px;
+}
+
+#preloader .loading {
+	position: absolute;
+	margin-top: 250px;
+	margin-left: 25px;
+	z-index: -3;
+}
+
+body {
+    background: rgb(0, 0, 0);
+	font-family: 'Diphylleia', sans-serif;
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	margin-top: 80px;
+	padding-bottom: 60px;
+}
+
+/* reproductor */
+
+.audio-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+audio {
+	height: 45px;
+	background-color: white;
+	box-shadow: 
+	  0px 0px 10px white,
+	  0px 0px 20px white,
+	  0px 0px 30px white,
+	  0px 0px 40px white,
+	  0px 0px 50px white,
+	  inset -10px -10px rgba(255,255,255,.2),
+	  inset -20px -20px rgba(255,255,255,.2),
+	  inset -30px -30px rgba(255,255,255,.2),
+	  inset -40px -40px rgba(255,255,255,.2),
+	  inset -50px -50px rgba(255,255,255,.2);
+	border-radius: 50px;
+}
+
+/* tarjeta navideña */
+
+.card {
+	position: relative;
+	width: 300px;
+	height: 425px;
+	border: 10px solid #ffffff;
+	margin: 60px auto 0 auto;
+	box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255), rgba(255, 255, 255, 0.5)), url();
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	background-color: #5eff00;
+}
+
+.card .text-container {
+	width: 80%;
+	height: 80%;
+	margin: auto;
+}
+
+.card .text-container #head p {
+	font-size: 1.5em;
+	margin: 60px auto 60px auto;
+}
+
+.card p {
+	font-size: 0.8em;
+	line-height: 1;
+	color: #000000;
+	text-align: center;
+	margin: 20px auto 0px auto;
+}
+
+.card .front {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	margin: -10px 0px 0px -10px;
+	border: 10px solid #288828;
+	backface-visibility: hidden;
+	background-image: url(img/stars.gif);
+	background-position: center;
+	background-color: #ffffff;
+	background-size: cover;
+	transform-style: preserve-3d;
+	transform-origin: 0% 50%;
+	transform: perspective(800px) rotateY(0deg);
+	transition: all 0.8s ease-in-out;
+	animation: colores 5s ease-in-out infinite;
+}
+
+@keyframes colores {
+	0%{
+		border-color: #25e1e7;
+	}
+	20%{
+		border-color: #5eff00;
+	}
+	50%{
+		border-color: #f02e0c;
+	}
+	75%{
+		border-color: #fbff0c;
+	}
+	100%{
+		border-color: #25e1e7;
+	}
+}
+
+.card:hover .front p, .card:hover .front h2, .card:hover .back h2 {
+	opacity: 0;
+}
+
+.card:hover .front {
+	transform: perspective(800px) rotateY(-170deg);
+	background-color: #46ee4e98;
+}
+
+.card:hover .back {
+	transform: perspective(800px) rotateY(-170deg);
+	box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.3), inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
+	background-color: #ffffff;
+}
+
+.card .back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border: 10px solid #ffffff;
+	margin: -10px 0px 0px -10px;
+	backface-visibility: visible;
+	filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, .5));
+	transform-style: preserve-3d;
+	transform-origin: 0% 50%;
+	transform: perspective(800px) rotateY(0deg);
+	transition: all 0.8s ease-in-out;
+	box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.card .front-img, .card .back-img {
+    opacity: 1;
+    transition: opacity 0.8s;
+}
+
+.card:hover .front-img, .card:hover .back-img {
+    opacity: 0;
+}
+
+.texto {
+	position: absolute;
+	top: 50px;
+	left: 150%;
+}
+
+.img2 {
+	position: relative;
+	filter: drop-shadow(10px 10px 5px rgba(0,0,0,0.75));
+	width: 100%;
+	top: 140px;
+	left: 5px;
+}
+
+.titulo {
+	position: absolute;
+	top: -10px;
+	left: 25%;
+	transform: translateX(-15%);
+	text-align: center;
+	font-family: 'Rubik Doodle Shadow', sans-serif;
+	background: linear-gradient(to right, #FF0000, #008000);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-shadow: 5px 5px 7px rgba(0,0,0,0.75);
+}
+
+/* Regalos */
+
+.present0 {
+	display: flex;
+	justify-content: space-around;
+}
+
+.present, .present3, .present4 {
+	margin-top: 12px;
+	width: 40%;
+	cursor: pointer;
+}
+
+.present img, .present3 img, .present4 img {
+	width: 100%;
+	height: auto;
+}
+
+/* Boton e imagen */
+
+.contenedor-exit {
+	margin-top: -40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+	z-index: 0;
+}
+
+.exit-button, .Video_navideño {
+    margin: 10px 0;
+	z-index: 0;
+}
+
+.exitP {
+	font-size: 10px;
+	color: white;
+	margin-left: 270px;
+	margin-top: 60px;
+	animation: flecha 1.5s ease-in-out infinite;
+}
+
+@keyframes flecha{
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    opacity: 0.5;
+    transform: translateX(-3px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(0px);
+  }
+  75% {
+    transform: translateX(-3px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.song {
+	position: absolute;
+	width: 9%;
+	cursor: pointer;
+	margin-left: 200px;
+	margin-top: 70px;
+	filter: drop-shadow(2px 2px 4px rgba(255, 255, 255, 0.5));
+	z-index: 0;
+}
+
+.exit-button {
+	width: 120px;
+	height: 95px;
+	font-family: 'Rubik Doodle Shadow', sans-serif;
+	color: #000000;
+	background-image: url(img/volver.gif);
+	background-size: 100px;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	text-decoration: none;
+	text-shadow: 0.5px 0.5px 0.5px rgb(0, 0, 0);
+	filter: drop-shadow(2px 2px 7px rgba(255, 255, 255, 0.5));
+	z-index: 0;
+}
+
+.exit-button:hover {
+	color: red;
+}
+
+.text-html, .titulo02, .inputLabel{
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.titulo03{
+	color: rgb(0, 0, 0);
+	text-shadow:
+    -1px -1px 0 #ffffff,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+/* Luces para fondo */
+
+.lighT {
+	position: absolute; 
+	background: white;
+	box-shadow: 
+	  0px 0px 10px white,
+	  0px 0px 20px white,
+	  0px 0px 30px white,
+	  0px 0px 40px white,
+	  0px 0px 50px white,
+	  inset -10px -10px rgba(255,255,255,.2),
+	  inset -20px -20px rgba(255,255,255,.2),
+	  inset -30px -30px rgba(255,255,255,.2),
+	  inset -40px -40px rgba(255,255,255,.2),
+	  inset -50px -50px rgba(255,255,255,.2);
+	border-radius: 50px;
+}
+
+.lights1 {
+	top: 55%;
+	left: 10%;
+	height: 8px;
+	width: 8px;
+	animation: animate 7s linear infinite;
+	z-index: 100;
+}
+  
+.lights2 {
+	top: 60%;
+	left: 90%;
+	animation: animate 10s linear infinite;
+	height: 5px;
+	width: 5px;
+	z-index: 100;
+}
+  
+.lights3 {
+	top: 7%;
+	left: 33%;
+	height: 10px;
+	width: 10px;
+	animation: animate 7s linear infinite;
+	z-index: 100;
+}
+ 
+.lights4 {
+	top: 106%;
+	left: 26%;
+	height: 9px;
+	width: 9px;
+	animation: animate 7s linear infinite;
+	z-index: 100;
+}
+  
+.lights5 {
+	top: 105%;
+	left: 5%;
+	height: 5px;
+	width: 5px;
+	animation: animate 12s linear infinite;
+	z-index: 100;
+}
+  
+.lights6 {
+	top: 30%;
+	left: 95%;
+	height: 9px;
+	width: 9px;
+	animation: animate 10s linear infinite;
+	z-index: 100;
+}
+  
+.lights7 {
+	top: 88%;
+	left: 14%;
+	z-index: 100;
+	height: 7px;
+	width: 7px;
+	z-index: 100;
+	animation: animate 10s linear infinite;
+}
+  
+.lights8 {
+	top: 105%;
+	left: 60%;
+	z-index: 100;
+	height: 5px;
+	width: 5px;
+	animation: animate 10s linear infinite;
+	z-index: 100;
+}
+
+.lights9 {
+	top: 15%;
+	left: 60%;
+	z-index: 100;
+	height: 7px;
+	width: 7px;
+	animation: animate 13s linear infinite;
+	z-index: 100;
+}
+
+.lights10 {
+	top: 5%;
+	left: 20%;
+	height: 5px;
+	width: 5px;
+	animation: animate 4s linear infinite;
+	z-index: 100;
+}
+
+.lights11 {
+	top: 10%;
+	left: 85%;
+	height: 5px;
+	width: 5px;
+	animation: animate 13s linear infinite;
+	z-index: 100;
+}
+  
+.lights12 {
+	top: 20%;
+	left: 80%;
+	height: 8px;
+	width: 8px;
+	animation: animate 10s linear infinite;
+	z-index: 100;
+}
+  
+.lights13 {
+	top: 39%;
+	left: 19%;
+	height: 10px;
+	width: 10px;
+	animation: animate 3s linear infinite;
+	z-index: 100;
+}
+  
+.lights14 {
+	top: 35%;
+	left: 5%;
+	height: 8px;
+	width: 8px;
+	animation: animate 5s linear infinite;
+	z-index: 100;
+}
+  
+.lights15 {
+	top: 93%;
+	left: 70%;
+	height: 5px;
+	width: 5px;
+	animation: animate 8s linear infinite;
+	z-index: 100;
+}
+  
+.lights16 { 
+	top: 105%;
+	left: 80%;
+	height: 5px;
+	width: 5px;
+	animation: animate 12s linear infinite;
+	z-index: 100;
+}
+  
+.lights17 {
+	top: 45%;
+	left: 28%;
+	height: 8px;
+	width: 8px;
+	animation: animate 10s linear infinite;
+	z-index: 100;
+}
+  
+.lights18 {
+	top: 40%;
+	left: 25%;
+	height: 5px;
+	width: 5px;
+	animation: animate 5s linear infinite;
+	z-index: 100;
+}
+  
+.lights19 {
+	top: 105%;
+	left: 95%;
+	height: 5px;
+	width: 5px;
+	animation: animate 10s linear infinite;
+	z-index: 100;
+}
+  
+.lights20 {
+	top: 59%;
+	left: 78%;
+	height: 3px;
+	width: 3px;
+	animation: animate 7s linear infinite;
+	z-index: 100;
+}
+  
+.lights21 {
+	top: 25%;
+	left: 56%;
+	height: 3px;
+	width: 3px;
+	animation: animate 6s linear infinite;
+	z-index: 100;
+}
+  
+.lights22 {
+	top: 6%;
+	left: 65%;
+	height: 10px;
+	width: 10px;
+	animation: animate 4s linear infinite;
+	z-index: 100;
+}
+  
+.lights23 {
+	top: 5%;
+	left: 4%;
+	height: 6px;
+	width: 6px;
+	animation: animate 10s linear infinite;
+	z-index: 100;
+}
+  
+.lights24 {
+	left: 13%;
+	height: 4px;
+	width: 4px;
+	animation: animate 12s linear infinite;
+	z-index: 100;
+}
+  
+.lights25 {
+	top: 105%;
+	left: 35%;
+	height: 6px;
+	width: 6px;
+	animation: animate 10s linear infinite;
+	z-index: 100;
+}
+
+@keyframes animate {
+	to{
+	  opacity: 1;
+	  transform: scale(0) translateY(0) rotate(70deg);
+	}
+	100%{
+	  opacity: 0;
+	  transform: scale(2) translateY(100px) rotate(360deg);
+	}
+}
+
+/* Responsivo */
+
+@media (max-width: 600px) {
+	body{
+		margin-top: 150px;
+	}
+	audio{
+	    height: 40px;
+	}
+	.img01{
+		width: 130px;
+		top: 268px;
+	}
+	.img2{
+		position: absolute;
+		width: 75%;
+		top: 65%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.titulo{
+		left: 65px;
+		top: -5px;
+	}
+	.card .text-container #head p{
+		font-size: 1.5em;
+		margin: 60px auto 60px auto;
+	}
+	.texto {
+		top: 75px;
+	}
+	.song{
+		width: 28%;
+		margin-left: 120px;
+	}
+	.exit-button {
+		margin-left: -83px;
+	}
+	.lights4{
+		top: 76%;
+	}
+	.lights5{
+		top: 63%;
+	}
+	.lights7{
+		top: 70%;
+	}
+	.lights8{
+		top: 55%;
+	}
+	.lights15{
+		top: 62%;
+	}
+	.lights25{
+		top: 72%;
+	}
+}
